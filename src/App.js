@@ -2,21 +2,23 @@ import React from 'react';
 import Header from './component/Header';
 import Balance from './component/Balance';
 import Income from './component/IncomeExpenses';
-import Transaction from './component/Transaction';
+import TransactionList from './component/TransactionList';
 import AddTransaction from './component/AddTransaction';
+
+import { GlobalProvider } from './context/GlobalState';
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
       <div className="container">
         <Balance />
         <Income />
-        <Transaction />
+        <TransactionList />
         <AddTransaction />
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 
